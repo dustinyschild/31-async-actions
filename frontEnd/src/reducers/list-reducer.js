@@ -9,7 +9,10 @@ export default (state = initialState,action = {}) => {
         ...state,
         payload
       ];
-  
+    case 'LIST_REMOVE':
+      return state.filter(list => {
+        return list._id !== payload._id;
+      });
     default:
       return state;
   }

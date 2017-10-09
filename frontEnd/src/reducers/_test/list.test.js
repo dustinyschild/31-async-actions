@@ -18,6 +18,20 @@ test('Create List Item',() => {
   expect(res).toEqual([{title: 'New List'}]);
 });
 
+test('Update List Item',() => {
+  const state = [
+    { _id: 5,title: 'Update Me' }
+  ];
+  const action = {
+    type: 'LIST_UPDATE',
+    payload: { _id: 5,title: 'Updated' }
+  };
+  deepFreeze([state,action]);
+
+  let res = reducer(state,action);
+  expect(res).toEqual([action.payload]);
+});
+
 test('Remove List Item',() => {
   const state = [
     { _id: 3,title: 'Remove me'},

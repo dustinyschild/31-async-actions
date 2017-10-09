@@ -36,3 +36,14 @@ test('Remove List Item',() => {
     { _id: 4,title: 'Don\'t remove me'}
   ]);
 });
+
+test('Unknown Action',() => {
+  const state = defaultState;
+  const action = {
+    type: 'UNKNOWN'
+  };
+  deepFreeze([state,action]);
+
+  let res = reducer(state,action);
+  expect(res).toEqual(defaultState);
+});

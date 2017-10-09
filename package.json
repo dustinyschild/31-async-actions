@@ -4,9 +4,13 @@
   "description": "![DV](https://www.deltavcodeschool.com/wp-content/uploads/DeltaV.png) 31: Async Actions\r ======",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon .",
     "lint": "eslint .",
-    "test": "jest --watchAll",
-    "dev": "webpack-dev-server"
+    "test:client": "jest",
+    "test:client-watch": "jest --watchAll",
+    "dev": "webpack-dev-server",
+    "test:server": "cross-env DEBUG=app:* mocha ./backEnd/**/*js",
+    "test:server-watch": "cross-env DEBUG=app:* mocha -w"
   },
   "repository": {
     "type": "git",

@@ -2,12 +2,12 @@ import React from 'react';
 
 export default class App extends React.Component {
   constructor(props){
-    super(props)
+    super(props);
   }
 
   render(){
     return (
-      <h1>Render Bitch</h1>
-    )
+      <h1>Hello world</h1>
+    );
   }
 }

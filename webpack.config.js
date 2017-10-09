@@ -34,7 +34,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Expense Tracker',
+      title: 'Lists \'O Notes',
       minify: {
         collapseWhitespace: false
       },

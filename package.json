@@ -8,7 +8,8 @@
     "lint": "eslint .",
     "test:client": "jest",
     "test:client-watch": "jest --watchAll",
-    "dev": "webpack-dev-server",
+    "dev": "webpack-dev-server -w",
+    "prod": "webpack -p",
     "test:server": "cross-env DEBUG=app:* mocha ./backEnd/**/*js",
     "test:server-watch": "cross-env DEBUG=app:* mocha -w"
   },
@@ -21,6 +22,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dustinyschild/31-async-actions/issues"
+  },
+  "jest": {
+    "rootDir": "./frontEnd"
   },
   "homepage": "https://github.com/dustinyschild/31-async-actions#readme",
   "dependencies": {

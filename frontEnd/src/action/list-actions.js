@@ -1,5 +1,5 @@
 const request = require('superagent');
-const API_URL = 'localhost:3000';
+const API_URL = 'http://localhost:3000';
 
 export const listCreate = list => {
   return {
@@ -29,7 +29,7 @@ export const listCreateRequest = list =>
     return request.post(`${API_URL}/api/list`)
       .send(list)
       .then(res => {
-        dispatch(res.body);
+        dispatch(listCreate(res.body));
         return res;
       });
   };

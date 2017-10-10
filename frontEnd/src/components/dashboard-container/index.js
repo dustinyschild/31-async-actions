@@ -16,7 +16,7 @@ class Dashboard extends React.Component {
         <div>
           <h2>Lists</h2>
           {this.props.lists.map(list => {
-            return(<p>{list.name}</p>);
+            return(<p key={list._id}>{list.name}</p>);
           })}
         </div>
       </div>
@@ -27,7 +27,7 @@ class Dashboard extends React.Component {
 const mapStateToProps = state => ({ lists: state.lists });
 
 const mapDispatchToProps = dispatch => ({
-  createList: list => dispatch(listActions.listCreate(list)),
+  createList: list => dispatch(listActions.listCreateRequest(list)),
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(Dashboard);

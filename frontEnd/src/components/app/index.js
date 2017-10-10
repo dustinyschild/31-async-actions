@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 
 const store = createAppStore();
 
-import DashboardContainer from '../dashboard-container';
+import Dashboard from '../dashboard-container';
 
 export default class App extends React.Component {
   render(){
@@ -15,7 +15,7 @@ export default class App extends React.Component {
         <Provider store={store}>
           <BrowserRouter>
             <Switch>
-              <Route exact path='/' component={DashboardContainer}/>
+              <Route exact path='/' component={Dashboard}/>
               <Route component={() => <h1>Not Found</h1>}/>
             </Switch>
           </BrowserRouter>

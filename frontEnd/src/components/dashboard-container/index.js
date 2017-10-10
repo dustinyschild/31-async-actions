@@ -1,11 +1,33 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import * as listActions from '../../action/list-actions';
+import ListForm from '../list/form';
 
-export default class DashboardContainer extends React.Component {
+class Dashboard extends React.Component {
   constructor(props){
     super(props);
   }
 
   render(){
-    return(<h1>DashBoard</h1>);
+    return(
+      <div className="dashboard-container">
+        <h1>Dashboard</h1>
+        <ListForm createList={this.props.createList}/>
+        <div>
+          <h2>Lists</h2>
+          {this.props.lists.map(list => {
+            return(<p>{list.name}</p>);
+          })}
+        </div>
+      </div>
+    );
   }
 }
+
+const mapStateToProps = state => ({ lists: state.lists });
+
+const mapDispatchToProps = dispatch => ({
+  createList: list => dispatch(listActions.listCreate(list)),
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(Dashboard);

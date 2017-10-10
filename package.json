@@ -4,7 +4,7 @@
   "description": "![DV](https://www.deltavcodeschool.com/wp-content/uploads/DeltaV.png) 31: Async Actions\r ======",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon .",
+    "start": "nodemon ./backEnd/server.js",
     "lint": "eslint .",
     "test:client": "jest",
     "test:client-watch": "jest --watchAll",

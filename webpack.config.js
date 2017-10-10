@@ -6,7 +6,7 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: './frontEnd/src/main.js',
   output: {
-    path: __dirname + '/dist',
+    path: __dirname + '/frontEnd/dist',
     filename: 'app.bundle.js'
   },
   module: {
@@ -29,7 +29,7 @@ module.exports = {
     historyApiFallback: true,
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 3000,
+    port: 5000,
     stats: 'errors-only'
   },
   plugins: [
